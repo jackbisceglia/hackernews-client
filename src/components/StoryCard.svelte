@@ -15,7 +15,7 @@
 		<div class="top flex gap-2 items-start flex-col md:flex-row md:items-center">
 			<a
 				href={`/item?id=${story.id}`}
-				class="text-lg sm:text-xl font-bold hover:underline self-baseline break-words"
+				class="text-lg sm:text-xl font-bold hover:underline self-baseline break-all line-clamp-1"
 				>{story.title}</a
 			>
 			{#if story.url}
