@@ -1,0 +1,34 @@
+<script lang="ts">
+	import type { Story } from '../routes/+page.svelte';
+
+	export let story: Story;
+	export let rank: number;
+
+	const getFormattedTimeSince = (ms: number) => Math.floor(ms / (1000 * 60 * 60));
+</script>
+
+<div
+	class="text-neutral-200 flex my-4 justify-start h-full gap-2 p-5 transition-all duration-300 ease-in-out border-2 rounded-lg shadow-lg group hover:my-6 hover:scale-110 bg-coolmint-700 hover:bg-coolmint-700/20 hover:border-coolmint-700 border-coolmint-700"
+>
+	<p class="text-lg font-bold">{rank}.</p>
+	<div class="flex flex-col gap-2">
+		<div class="top flex gap-2 items-center">
+			<a href={`/item?id=${story.id}`} class="text-xl font-bold hover:underline">{story.title}</a>
+			<a
+				target="_blank"
+				href={story.url}
+				class="font-light text-coolmint-400 hover:text-coolmint-500 transition-colors duration-100 italic text-sm"
+				>({story.url})</a
+			>
+		</div>
+		<div class="bottom flex flex-col text-coolmint-400">
+			<p><span class=" text-neutral-200">{story.score}</span> points</p>
+			<p><span class=" text-neutral-200">{story.descendants}</span> comments</p>
+			<p class="text-coolmint-400 font-medium">
+				posted by:
+				{story.by}
+				{getFormattedTimeSince(story.time_posted)} hr ago
+			</p>
+		</div>
+	</div>
+</div>

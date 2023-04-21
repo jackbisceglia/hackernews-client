@@ -1,0 +1,9 @@
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,100,700,400,300,200,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	font-family: 'Cabinet Grotesk', sans-serif;
+}
