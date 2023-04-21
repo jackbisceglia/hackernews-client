@@ -8,16 +8,18 @@
 </script>
 
 <div
-	class="text-neutral-200 flex my-4 justify-start h-full gap-2 p-5 transition-all duration-300 ease-in-out border-2 rounded-lg shadow-lg group hover:my-6 hover:scale-110 bg-coolmint-700 hover:bg-coolmint-700/20 hover:border-coolmint-700 border-coolmint-700"
+	class="text-neutral-200 w-full flex my-4 justify-start h-full gap-2 p-5 transition-all duration-300 ease-in-out border-2 rounded-lg shadow-lg group hover:my-6 hover:scale-110 bg-coolmint-700 hover:bg-coolmint-700/20 hover:border-coolmint-700 border-coolmint-700"
 >
 	<p class="text-lg font-bold">{rank}.</p>
 	<div class="flex flex-col gap-2">
-		<div class="top flex gap-2 items-center">
-			<a href={`/item?id=${story.id}`} class="text-xl font-bold hover:underline">{story.title}</a>
+		<div class="top flex gap-2 items-start flex-col md:flex-row md:items-center">
+			<a href={`/item?id=${story.id}`} class="text-lg sm:text-xl font-bold hover:underline"
+				>{story.title}</a
+			>
 			<a
 				target="_blank"
 				href={story.url}
-				class="font-light text-coolmint-400 hover:text-coolmint-500 transition-colors duration-100 italic text-sm"
+				class="font-light text-coolmint-400 hover:text-coolmint-500 transition-colors duration-100 italic text-sm break-words"
 				>({story.url})</a
 			>
 		</div>

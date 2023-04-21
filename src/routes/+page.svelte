@@ -74,8 +74,6 @@
 		await fetchStories();
 		STATE.loading = false;
 	})();
-
-	// const posts: Story[] = [...new Array(10).keys()].map((num) => genMockPost(num + 1));
 </script>
 
 <!-- <h1 class="text-5xl font-bold text-coolmint-600">Hacker News</h1> -->
