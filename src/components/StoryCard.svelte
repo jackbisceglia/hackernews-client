@@ -13,15 +13,19 @@
 	<p class="text-lg font-bold">{rank}.</p>
 	<div class="flex flex-col gap-2">
 		<div class="top flex gap-2 items-start flex-col md:flex-row md:items-center">
-			<a href={`/item?id=${story.id}`} class="text-lg sm:text-xl font-bold hover:underline"
+			<a
+				href={`/item?id=${story.id}`}
+				class="text-lg sm:text-xl font-bold hover:underline self-baseline break-words"
 				>{story.title}</a
 			>
-			<a
-				target="_blank"
-				href={story.url}
-				class="font-light text-coolmint-400 hover:text-coolmint-500 transition-colors duration-100 italic text-sm break-words"
-				>({story.url})</a
-			>
+			{#if story.url}
+				<a
+					target="_blank"
+					href={story.url}
+					class="font-light text-coolmint-400 hover:text-coolmint-500 transition-colors duration-100 italic text-sm break-all line-clamp-1"
+					>({story.url})</a
+				>
+			{/if}
 		</div>
 		<div class="bottom flex flex-col text-coolmint-400">
 			<p><span class=" text-neutral-200">{story.score}</span> points</p>
