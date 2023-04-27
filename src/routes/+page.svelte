@@ -20,6 +20,8 @@
 </script>
 
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	import Spinner from '../components/Spinner.svelte';
 	import StoryCard from '../components/StoryCard.svelte';
 
@@ -50,7 +52,7 @@
 		STATE.stories = [...STATE.stories, ...paginated_stories];
 	};
 
-	(async () => {
+	onMount(async () => {
 		STATE.loading = true;
 		const res = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty');
 		const data = await res.json();
@@ -59,9 +61,12 @@
 
 		await fetchStories();
 		STATE.loading = false;
-	})();
+	});
 </script>
 
+<head>
+	<title>HN Client</title>
+</head>
 {#if !STATE.loading}
 	{#each STATE.stories as p, index}
 		<StoryCard story={p} rank={index + 1} />
